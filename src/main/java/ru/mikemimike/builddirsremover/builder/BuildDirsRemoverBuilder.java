@@ -22,7 +22,7 @@ public class BuildDirsRemoverBuilder {
         maven.setDirToRemove("target");
         BuildDirsRemoverProperties.BuildDirsRemover.Settings.AssemblySystem gradle =
                 new BuildDirsRemoverProperties.BuildDirsRemover.Settings.AssemblySystem();
-        maven.setDirToRemove("build");
+        gradle.setDirToRemove("build");
 
         settings.setAssemblySystems(
                 new HashMap<>(
