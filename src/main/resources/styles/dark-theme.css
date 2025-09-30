@@ -1,0 +1,100 @@
+.root {
+    -fx-font-family: "Helvetica Neue", sans-serif;
+    -fx-font-size: 14px;
+    -fx-base: #1e1e1e; /* Тёмный фон */
+    -fx-background-color: #1e1e1e;
+}
+
+.label {
+    -fx-text-fill: #e0e0e0; /* Светлый текст */
+    -fx-font-weight: normal;
+}
+
+.button {
+    -fx-background-color: #3a7bd5; /* Синий акцент */
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 14px;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 6, 0, 0, 2);
+    -fx-pref-width: 120px;
+    -fx-min-height: 35px;
+    -fx-max-height: 35px;
+}
+
+.button:hover {
+    -fx-background-color: #2f6fc2;
+}
+
+.text-field, .text-area {
+    -fx-background-color: #2a2a2a;
+    -fx-text-fill: #e0e0e0;
+    -fx-border-color: #444;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-padding: 8px;
+}
+
+.text-area {
+    -fx-max-width: 800;
+}
+
+.menu-bar {
+    -fx-background-color: #2a2a2a;
+}
+
+.menu {
+    -fx-text-fill: #e0e0e0;
+}
+
+.menu-item {
+    -fx-text-fill: #e0e0e0;
+}
+
+.menu-item:hover {
+    -fx-background-color: #3a3a3a;
+    -fx-text-fill: #3a7bd5;
+}
+
+.scroll-pane {
+    -fx-background: #1e1e1e;
+    -fx-border-color: #333;
+}
+
+.separator {
+    -fx-background-color: #444;
+}
+
+#mainMenu {
+    -fx-text-fill: #e0e0e0;
+}
+
+#settingsMavenVBox, #settingsGradleVBox, #settingsAssemblySystemsVBox, #settingsVBox {
+    -fx-spacing: 15;
+}
+
+#settingsAssemblySystemsVBoxTitledPanes {
+    -fx-min-width: 500;
+}
+
+.assemblySystemMenuItemVBox {
+    -fx-spacing: 5;
+    -fx-padding: 5 0 0 5;
+}
+
+#settingsScrollPane {
+    -fx-padding: 5 0 0 5;
+}
+
+.settingsHBox {
+    -fx-spacing: 2;
+}
+
+.titled-pane > .title {
+    -fx-background-color: #2a2a2a;
+    -fx-text-fill: #e0e0e0;
+}
+
+.titled-pane > .content {
+    -fx-background-color: #1e1e1e;
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<VBox styleClass="assemblySystemMenuItemVBox" xmlns:fx="http://javafx.com/fxml" fx:controller="ru.mikemimike.builddirsremover.controller.MavenAssemblySystemMenuItemController">
+    <Label fx:id="mavenAssemblySystemPathToRemoveLabel" text="Выберите папку с проектом maven:"/>
+    <HBox>
+        <TextField fx:id="mavenAssemblySystemPathToRemove" prefWidth="400"/>
+        <Button fx:id="mavenAssemblySystemPathToRemoveBrowseButton" text="Обзор" onAction="#handleBrowseMaven"/>
+    </HBox>
+    <Button fx:id="mavenAssemblySystemDeleteButton" text="Удалить папки сборки" onAction="#handleDelete" disable="true"/>
+    <TextArea fx:id="mavenLogTextArea" editable="false" wrapText="true" />
+</VBox>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<VBox styleClass="assemblySystemMenuItemVBox" xmlns:fx="http://javafx.com/fxml" fx:controller="ru.mikemimike.builddirsremover.controller.GradleAssemblySystemMenuItemController">
+    <Label fx:id="gradleAssemblySystemPathToRemoveLabel" text="Выберите папку с проектом gradle:"/>
+    <HBox>
+        <TextField fx:id="gradleAssemblySystemPathToRemove" prefWidth="400"/>
+        <Button fx:id="gradleAssemblySystemPathToRemoveBrowseButton" text="Обзор" onAction="#handleBrowseGradle"/>
+    </HBox>
+    <Button fx:id="gradleAssemblySystemDeleteButton" text="Удалить папки сборки" onAction="#handleDelete" disable="true"/>
+    <TextArea fx:id="gradleLogTextArea" editable="false" wrapText="true" />
+</VBox>

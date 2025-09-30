@@ -1,0 +1,92 @@
+.root {
+    -fx-font-family: "Helvetica Neue", sans-serif; /* Современный шрифт */
+    -fx-font-size: 14px;
+    -fx-base: #f5f5f5; /* Светлый фон */
+}
+
+.label {
+    -fx-text-fill: #333; /* Темный цвет текста для меток */
+    -fx-font-weight: normal; /* Убрать жирный шрифт для минимализма */
+}
+
+.button {
+    -fx-background-color: #50a1f2; /* Зеленый цвет фона кнопок */
+    -fx-text-fill: white; /* Цвет текста кнопок */
+    -fx-font-size: 14px;
+    -fx-border-radius: 0; /* Убрать закругление углов */
+    -fx-background-radius: 0; /* Убрать закругление углов */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 5, 0, 0, 1); /* Легкая тень для кнопок */
+    -fx-pref-width: 120px;
+    -fx-min-height: 35px;
+    -fx-max-height: 35px;
+}
+
+.button:hover {
+    -fx-background-color: #3b99f7; /* Темнее при наведении */
+}
+
+.text-field {
+    -fx-border-color: #ccc; /* Светло-серая рамка */
+    -fx-border-radius: 0; /* Убрать закругление углов */
+    -fx-padding: 8px; /* Увеличить внутренние отступы */
+}
+
+.text-area {
+    -fx-border-color: #ccc; /* Светло-серая рамка */
+    -fx-border-radius: 0; /* Убрать закругление углов */
+    -fx-padding: 8px; /* Увеличить внутренние отступы */
+    -fx-max-width: 800;
+}
+
+.menu-bar {
+    -fx-background-color: #ffffff; /* Белый фон для меню */
+}
+
+.menu-item {
+    -fx-text-fill: #333; /* Темный цвет текста для MenuItem */
+}
+
+.menu-item:hover {
+    -fx-text-fill: #4CAF50; /* Цвет текста для MenuItem при наведении */
+}
+
+.menu {
+    -fx-text-fill: #333; /* Темный цвет текста меню */
+}
+
+.scroll-pane {
+    -fx-background-color: #f5f5f5; /* Светлый цвет фона для ScrollPane */
+}
+
+.separator {
+    -fx-background-color: #ccc; /* Светло-серая цвет разделителей */
+}
+
+#mainMenu {
+    -fx-text-fill: #333;
+}
+
+#settingsMavenVBox, #settingsGradleVBox, #settingsAssemblySystemsVBox, #settingsVBox {
+    -fx-spacing: 15; /* Увеличить расстояние между элементами */
+}
+
+#settingsAssemblySystemsVBoxTitledPanes {
+    -fx-min-width: 500;
+}
+
+.assemblySystemMenuItemVBox {
+    -fx-spacing: 5;
+    -fx-padding: 5 0 0 5;
+}
+
+#settingsScrollPane {
+    -fx-padding: 5 0 0 5;
+}
+
+.settingsHBox {
+    -fx-spacing: 2;
+}
+
+.settingsSectionVBox {
+    -fx-padding: 0 0 0 10;
+}

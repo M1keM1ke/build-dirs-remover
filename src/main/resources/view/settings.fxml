@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+<ScrollPane fx:id="settingsScrollPane" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ru.mikemimike.builddirsremover.controller.SettingsController">
+    <VBox fx:id="settingsVBox">
+        <VBox>
+            <Label fx:id="settingsMainLabel" text="Основные"/>
+            <VBox styleClass="settingsSectionVBox">
+                <VBox>
+                    <Label fx:id="settingsLanguageLabel" text="Язык:"/>
+                    <ComboBox fx:id="settingsLanguageComboBox" value="Русский" onAction="#updateLanguageComboBox">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="Русский"/>
+                                <String fx:value="English"/>
+                            </FXCollections>
+                        </items>
+                    </ComboBox>
+                </VBox>
+                <VBox>
+                    <Label fx:id="settingsThemeLabel" text="Тема:"/>
+                    <ComboBox fx:id="settingsThemeComboBox" value="Dark" onAction="#updateThemeComboBox">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="Dark"/>
+                                <String fx:value="Light"/>
+                            </FXCollections>
+                        </items>
+                    </ComboBox>
+                </VBox>
+            </VBox>
+        </VBox>
+        <VBox fx:id="settingsAssemblySystemsVBox">
+            <VBox>
+                <Label fx:id="settingsAssemblySystemsLabel" text="Системы сборки"/>
+                <VBox styleClass="settingsSectionVBox" fx:id="settingsAssemblySystemsVBoxTitledPanes">
+                    <TitledPane text="Maven" expanded="false">
+                        <VBox fx:id="settingsMavenVBox">
+                            <HBox styleClass="settingsHBox" alignment="CENTER_LEFT">
+                                <Label fx:id="settingsMavenPathToRemoveLabel" text="Директория для удаления:"/>
+                                <TextField fx:id="settingsMavenPathToRemoveTextField"/>
+                                <Button fx:id="settingsMavenPathToRemoveBrowseButton" text="Обзор"
+                                        onAction="#handleBrowsePathToRemoveMaven"/>
+                            </HBox>
+                            <HBox styleClass="settingsHBox" fx:id="settingsMavenDirToRemoveHBox"
+                                  alignment="CENTER_LEFT">
+                                <Label fx:id="settingsMavenDirToRemoveLabel" text="Папка для удаления:"/>
+                                <TextField fx:id="settingsMavenDirToRemoveTextField"/>
+                            </HBox>
+                        </VBox>
+
+                    </TitledPane>
+                    <TitledPane text="Gradle" expanded="false">
+                        <VBox fx:id="settingsGradleVBox">
+                            <HBox styleClass="settingsHBox" alignment="CENTER_LEFT">
+                                <Label fx:id="settingsGradlePathToRemoveLabel" text="Директория для удаления:"/>
+                                <TextField fx:id="settingsGradlePathToRemoveTextField"/>
+                                <Button fx:id="settingsGradlePathToRemoveBrowseButton" text="Обзор"
+                                        onAction="#handleBrowsePathToRemoveGradle"/>
+                            </HBox>
+                            <HBox styleClass="settingsHBox" alignment="CENTER_LEFT">
+                                <Label fx:id="settingsGradleDirToRemoveLabel" text="Папка для удаления:"/>
+                                <TextField fx:id="settingsGradleDirToRemoveTextField"/>
+                            </HBox>
+                        </VBox>
+                    </TitledPane>
+                </VBox>
+            </VBox>
+            <Button fx:id="settingsSaveButton" text="Сохранить" onAction="#handleSaveSettings" disable="true"/>
+        </VBox>
+
+    </VBox>
+
+</ScrollPane>
