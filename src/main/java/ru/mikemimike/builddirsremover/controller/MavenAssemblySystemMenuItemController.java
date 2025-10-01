@@ -85,17 +85,27 @@ public class MavenAssemblySystemMenuItemController implements LanguageChangeList
         DirectoryChooser directoryChooser = new DirectoryChooser();
 
         String currentPath = mavenAssemblySystemPathToRemove.getText();
-        File initialDirectory = new File(currentPath);
 
-        if (initialDirectory.exists() && initialDirectory.isDirectory()) {
-            directoryChooser.setInitialDirectory(initialDirectory);
+        if (currentPath == null) {
+            File selectedDirectory = directoryChooser.showDialog(null);
+            if (selectedDirectory != null) {
+                mavenAssemblySystemPathToRemove.setText(selectedDirectory.getAbsolutePath());
+                mavenAssemblySystemDeleteButton.setVisible(true);
+            }
+        } else {
+            File initialDirectory = new File(currentPath);
+
+            if (initialDirectory.exists() && initialDirectory.isDirectory()) {
+                directoryChooser.setInitialDirectory(initialDirectory);
+            }
+
+            File selectedDirectory = directoryChooser.showDialog(null);
+            if (selectedDirectory != null) {
+                mavenAssemblySystemPathToRemove.setText(selectedDirectory.getAbsolutePath());
+                mavenAssemblySystemDeleteButton.setVisible(true);
+            }
         }
 
-        File selectedDirectory = directoryChooser.showDialog(null);
-        if (selectedDirectory != null) {
-            mavenAssemblySystemPathToRemove.setText(selectedDirectory.getAbsolutePath());
-            mavenAssemblySystemDeleteButton.setVisible(true);
-        }
     }
 
     public void handleDelete() {

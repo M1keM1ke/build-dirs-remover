@@ -163,7 +163,7 @@ public class SettingsController implements LanguageChangeListener {
         DirectoryChooser directoryChooser = new DirectoryChooser();
         File selectedDirectory = directoryChooser.showDialog(settingsGradlePathToRemoveBrowseButton.getScene().getWindow());
         if (selectedDirectory != null) {
-            settingsMavenPathToRemoveTextField.setText(selectedDirectory.getAbsolutePath());
+            settingsGradlePathToRemoveTextField.setText(selectedDirectory.getAbsolutePath());
         }
     }
 

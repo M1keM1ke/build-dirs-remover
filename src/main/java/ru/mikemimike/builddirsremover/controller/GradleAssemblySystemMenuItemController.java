@@ -83,10 +83,27 @@ public class GradleAssemblySystemMenuItemController implements LanguageChangeLis
 
     public void handleBrowseGradle() {
         DirectoryChooser directoryChooser = new DirectoryChooser();
-        File selectedDirectory = directoryChooser.showDialog(null);
-        if (selectedDirectory != null) {
-            gradleAssemblySystemPathToRemove.setText(selectedDirectory.getAbsolutePath());
-            gradleAssemblySystemDeleteButton.setVisible(true);
+
+        String currentPath = gradleAssemblySystemPathToRemove.getText();
+
+        if (currentPath == null) {
+            File selectedDirectory = directoryChooser.showDialog(null);
+            if (selectedDirectory != null) {
+                gradleAssemblySystemPathToRemove.setText(selectedDirectory.getAbsolutePath());
+                gradleAssemblySystemDeleteButton.setVisible(true);
+            }
+        } else {
+            File initialDirectory = new File(currentPath);
+
+            if (initialDirectory.exists() && initialDirectory.isDirectory()) {
+                directoryChooser.setInitialDirectory(initialDirectory);
+            }
+
+            File selectedDirectory = directoryChooser.showDialog(null);
+            if (selectedDirectory != null) {
+                gradleAssemblySystemPathToRemove.setText(selectedDirectory.getAbsolutePath());
+                gradleAssemblySystemDeleteButton.setVisible(true);
+            }
         }
     }
 
